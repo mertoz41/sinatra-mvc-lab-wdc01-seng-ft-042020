@@ -14,6 +14,21 @@ class App < Sinatra::Base
     end
 
 
+    get "/nato" do
+        erb :user_input
+    end
+
+    post "/nato" do
+        word = params[:user_phrase]
+        phrase = PigLatinizer.new
+        @nato = phrase.nato(word)
+        erb :finished
+    end
+
+
+        
+
+
 
 
 
